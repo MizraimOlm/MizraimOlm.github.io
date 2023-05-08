@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="myStyle.css">
+	<title>Legos Poll</title>
+	<style>
+		h1 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+    <a href="index.html">Home</a>
+    <a href="page1.html">Rick Astley Memorial</a>
+    <a href="page2.html">Cult Webpage</a>
+    <a href="page3.html">Wheels vs. Doors</a>
+    <a href="page4.html">Lego Poll</a>
+	<h1>Do you think Legos are cool?</h1>
+	<button onclick="yes()">Yes</button>
+	<button onclick="no()">No</button>
+
+	<p id="result"></p>
+
+	<script>
+		function yes() {
+			document.getElementById("result").innerHTML = "You're very smart and cool!";
+		}
+
+		function no() {
+			document.getElementById("result").innerHTML = "Try again.";
+		}
+	</script>
+</body>
+</html>
