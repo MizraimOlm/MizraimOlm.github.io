@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="myStyle.css">
+  <title>Whack-a-Mole Game</title>
+  <a href="index.html">Home</a>
+  <a href="page1.html">Rick Astley Memorial</a>
+  <a href="page2.html">Cult Webpage</a>
+  <a href="page3.html">Wheels vs. Doors</a>
+  <a href="page4.html">Lego Poll</a>
+  <a href="page5.html">Whack-a-Mole Game</a>
+  <style>
+    .hole {
+      width: 100px;
+      height: 100px;
+      background-color: #9c6231;
+      border: 2px solid #54381e;
+      display: inline-block;
+      margin: 10px;
+      position: relative;
+    }
+
+    .mole {
+      width: 80px;
+      height: 80px;
+      background-color: #74562e;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Whack-a-Mole Game</h1>
+  <div id="gameboard">
+    <div class="hole" onclick="whack(this)">
+      <div class="mole"></div>
+    </div>
+    <div class="hole" onclick="whack(this)">
+      <div class="mole"></div>
+    </div>
+    <div class="hole" onclick="whack(this)">
+      <div class="mole"></div>
+    </div>
+    <!-- Add more holes as needed -->
+  </div>
+
+  <script>
+    // Get all the mole elements
+    const moles = document.getElementsByClassName('mole');
+
+    // Function to start the game
+    function startGame() {
+      setInterval(showRandomMole, 1000);
+    }
+
+    // Function to show a random mole
+    function showRandomMole() {
+      // Hide all moles
+      hideMoles();
+
+      // Get a random mole
+      const randomIndex = Math.floor(Math.random() * moles.length);
+      const mole = moles[randomIndex];
+
+      // Show the mole
+      mole.style.display = 'block';
+
+      // Set a timeout to hide the mole after a random duration
+      const duration = Math.floor(Math.random() * 1000) + 500; // Random duration between 500ms and 1500ms
+      setTimeout(hideMoles, duration);
+    }
+
+    // Function to hide all moles
+    function hideMoles() {
+      for (let i = 0; i < moles.length; i++) {
+        moles[i].style.display = 'none';
+      }
+    }
+
+    // Function to handle whacking a mole
+    function whack(hole) {
+      const mole = hole.querySelector('.mole');
+      if (mole.style.display === 'block') {
+        // Whack successful, hide the mole
+        mole.style.display = 'none';
+      }
+    }
+
+    // Start the game when the page loads
+    startGame();
+  </script>
+</body>
+</html>
