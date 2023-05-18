@@ -10,10 +10,23 @@ body p {
 }
 body a {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 15px;
 }
 body a:hover {
     color: rgb(148, 0, 0)
     text-decoration none;
     font-size: 30px;
+}
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: -10px; /* Remove the space between links */
+}
+ a:hover {
+  color: red;
+  text-decoration: underline;
 }
